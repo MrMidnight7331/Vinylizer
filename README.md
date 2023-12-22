@@ -21,6 +21,7 @@ Can't decide what side you wanna listen to on vinyl? I build a small Python tool
 # Config
 
 Customize album manually in JSON (or use the add function). 
+
 Example:
 
 ```json
