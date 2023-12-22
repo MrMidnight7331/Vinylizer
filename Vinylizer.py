@@ -77,6 +77,10 @@ def list_all(albums):
 
 
 if __name__ == "__main__":
+
+    # Banner. Dont touch!
+    print("o      'O                  o\nO       o o               O  o\no       O                 o\no       o                 O\nO      O' O  'OoOo. O   o o  O  ooOO .oOo. `OoOo.\n`o    o   o   o   O o   O O  o    o  OooO'  o\n `o  O    O   O   o O   o o  O   O   O      O\n  `o'     o'  o   O `OoOO Oo o' OooO `OoO'  o\nBy: MrMidnight          o\n                     OoO'                         \n")
+
     config_file = "config.json"
 
     albums_config = load_albums(config_file)
