@@ -59,7 +59,7 @@ def add_vinyl(albums, filename, name, num_sides):
     new_album = {"name": name, "sides": sides}
     albums.append(new_album)
     save_albums(filename, albums)
-    print(f"Album '{name}' with {num_sides} sides added successfully.")
+    print(f"Album '{name}' with {num_sides} sides added successfully.\n")
 
 
 def delete_vinyl(albums, filename, name):
@@ -67,13 +67,12 @@ def delete_vinyl(albums, filename, name):
         if album['name'] == name:
             albums.remove(album)
             save_albums(filename, albums)
-            print(f"Album '{name}' deleted successfully!")
+            print(f"Album '{name}' deleted successfully!\n")
             return
     print(f"Album '{name}' not found.")
 
 
 def list_all(albums):
-    print("Listing Albums:")
     print_albums(albums)
 
 
@@ -83,36 +82,36 @@ if __name__ == "__main__":
     albums_config = load_albums(config_file)
 
     while True:
-        choice = input(
-            "Do you want to (R)andomly choose a Album, (A)dd a new one, (D)elete an album, (L)ist all albums, or (Q)uit? : ").upper()
+        choice = input("Do you want to (R)andomly choose a Album, (A)dd a new one, (D)elete an album, (L)ist all albums, or (Q)uit? : ").upper()
 
         if choice == "R":
             random_album, random_side = randomize_vinyl(albums_config)
             if random_album is not None and random_side is not None:
-                print(f"Randomly selected album: {random_album}, Random side: {random_side}")
+                print(f"Randomly selected album: {random_album}, Random side: {random_side}\n")
 
         elif choice == "A":
-            name = input("Enter the name of the new album: ")
+            name = input("\nEnter the name of the new album: ")
 
             while True:
                 try:
                     num_sides = int(input("Enter the number of sides for the new album: "))
                     break  # Break the loop if the input is a integer
                 except ValueError:
-                    print("Invalid input. Please enter a valid integer for the number of sides.")
+                    print("\nInvalid input. Please enter a valid integer for the number of sides.")
 
             add_vinyl(albums_config, config_file, name, num_sides)
 
         elif choice == "D":
-            name = input("Enter the name of the album to delete: ")
+            name = input("\nEnter the name of the album to delete: ")
             delete_vinyl(albums_config, config_file, name)
 
         elif choice == "L":
             list_all(albums_config)
+            print("")
 
         elif choice == "Q":
-            print("Quitting Vinylizer.")
+            print("\nQuitting Vinylizer.")
             break
 
         else:
-            print("Invalid choice. Please choose 'R', 'A', 'D', 'L', or 'Q'.")
+            print("Invalid Input!")
