@@ -20,7 +20,8 @@ Can't decide what side you wanna listen to on vinyl? I build a small Python tool
 
 # Config
 
-Custom album for JSON config (or use the add function):
+Customize album manually in JSON (or use the add function). 
+Example:
 
 ```json
 [{"name": "Album1", "sides": ["A", "B", "C", "D"]}, {"name": "Album2", "sides": ["A", "B", "C"]}, {"name": "Album3", "sides": ["A", "B", "C", "D", "E", "F"]}]
