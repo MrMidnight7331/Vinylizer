@@ -1,6 +1,6 @@
 # @Name: Vinylizer
 # @Author: MrMidnight
-# @Version: 7.8
+# @Version: 1.8
 
 import json
 import random
